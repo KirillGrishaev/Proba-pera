@@ -1,6 +1,6 @@
 package bank.otdel;
 
 public class OtdelConstruct {
-    protected String name;//название отдела//
+    protected String otdelName;//название отдела//
     int rabotnik ;//число сотрудников отдела, сколько клиентов за раз можно обработать//
 }

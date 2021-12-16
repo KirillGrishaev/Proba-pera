@@ -2,6 +2,6 @@ package bank.otdel;
 
 public class OtdelYurFace extends OtdelConstruct{
     public OtdelYurFace (String name,int rabotnik){
-        this.name = name;
+        this.otdelName = otdelName;
         this.rabotnik = rabotnik;}
 }
