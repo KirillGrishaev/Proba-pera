@@ -17,7 +17,6 @@ public class OtdelCredit extends OtdelConstruct {
 
     public Credit vidatCredit() {
         Credit credit = new Credit(5, 10);//создание объекта класса Credit с введенными параметрами//
-        Sotrudnik vasia = vasiaOdobril();
         return credit;
     }
 

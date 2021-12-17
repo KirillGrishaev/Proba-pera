@@ -24,17 +24,7 @@ class BankOffice extends Bank {
                 "Кидаем круглосуточно!");//создание Офиса
         OtdelCredit otdelCredit = new OtdelCredit("отд",3,new Sotrudnik("Сотрудник","Специалист отдела кредитования"));//получаем в офисе созданный Отдел с сотрудником внутри//
         Credit credit = otdelCredit.vidatCredit();
-
-
-
-
-
-
-
-
-
-
-
+        Sotrudnik vasia = otdelCredit.vasiaOdobril();
 
         //Получаем обратно созданный объект типа Кредит//
         //System.out.println("Срок кредита: "+credit.getTime()+" лет");//Вывод на экран параметров Кредита//
