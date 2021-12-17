@@ -3,52 +3,30 @@ import uslugi.Credit;
 import people.sotrudnik.Sotrudnik;
 import people.client.Client;
 import java.util.Scanner;
-
 public class OtdelCredit extends OtdelConstruct {
     private Sotrudnik vasia;
     private double dohod;
     Scanner scanner = new Scanner(System.in);
-
     public OtdelCredit(String otedelName, int rabotnik, Sotrudnik vasia) {//Конструктор для Отдела Кредитов//
         this.otdelName = otdelName;
         this.rabotnik = rabotnik;
         this.vasia = new Sotrudnik("Сотрудник", "Специалист отдела кредитования");
     }
-
     public Credit vidatCredit() {
         Credit credit = new Credit(5, 10);//создание объекта класса Credit с введенными параметрами//
         return credit;
     }
-
-
-
     public Sotrudnik vasiaOdobril() {//Сотрудник одобряет заявку//
         System.out.println("Введите доход клиента: ");
         Credit credit = vidatCredit();
         int dohod = scanner.nextInt();
         if (dohod < 1000) {
             System.out.println("Сотрудник Василий отказал в кредите");
-
         } else {
             System.out.println("Сотрудник Василий выдал кредит.");
             System.out.println("Срок кредита: "+credit.getTime()+" лет");//Вывод на экран параметров Кредита//
             System.out.println("Процентная ставка: "+credit.getProcent()+" %");//Вывод на экран параметров Кредита
-            // Вызывает закольцовку. Не получается передать параметры Кредита не инициализируя метод выдачи кредита по новой.Синтаксис?
         }
         return null;
-
-
     }
 }
-
-
-
-
-//System.out.println("Введите доход клиента: ");
-  //      int dohod = scanner.nextInt();
-    //    if (dohod < 1000) {
-      //  System.out.println("Сотрудник Василий отказал в кредите");
-        //} else {
-        //System.out.println("Сотрудник Василий выдал кредит.");
-        //System.out.println("Процентная ставка: "+credit.getProcent()+"% " +" Срок Кредита: "+credit.getTime()+" лет.");
-       // }
