@@ -1,6 +1,5 @@
 package uslugi;
 public class Credit {
-
     private int procent; //процентная ставка кредита//
     private int time; // срок кредита
     public Credit(int procent, int time){//Конструктор для объектов типа Кредит//

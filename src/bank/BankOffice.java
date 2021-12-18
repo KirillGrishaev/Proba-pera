@@ -1,10 +1,10 @@
 package bank;
+import people.base.Chelovek;
 import people.client.Client;
 import people.sotrudnik.Sotrudnik;
 import bank.otdel.OtdelCredit;
 import uslugi.Credit;
 class BankOffice extends Bank {
-    private Sotrudnik vasia;
     String adress;
     String typeOffice; //круглосуточный, либо имеет часы работы//
     public BankOffice(String name, String adress, String typeOffice) {//Конструктор для создания офиса//
@@ -17,8 +17,10 @@ class BankOffice extends Bank {
                 "Кидала Банк",
                 "Три девятое царство, г. Урюпинск, улица Щипачей,д.13",
                 "Кидаем круглосуточно!");//создание Офиса
-        OtdelCredit otdelCredit = new OtdelCredit("отд",3,new Sotrudnik("Сотрудник","Специалист отдела кредитования"));//получаем в офисе созданный Отдел с сотрудником внутри//
+        OtdelCredit otdelCredit = new OtdelCredit("отд",1);//получаем в офисе созданный Отдел с сотрудником внутри//
         Credit credit = otdelCredit.vidatCredit();
-        Sotrudnik vasia = otdelCredit.vasiaOdobril();
-    }
+        Sotrudnik vasia = otdelCredit.getVasia();
+        otdelCredit.vasiaOdobril();
+        System.out.println(vasia.getDolznost());
+            }
 }
