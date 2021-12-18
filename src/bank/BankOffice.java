@@ -21,6 +21,6 @@ class BankOffice extends Bank {
         Credit credit = otdelCredit.vidatCredit();
         Sotrudnik vasia = otdelCredit.getVasia();
         otdelCredit.vasiaOdobril();
-        System.out.println(vasia.getDolznost());
+        System.out.println(vasia.getDolznost()+"  "+vasia.getType());//getType выдает null, хотя в конструкторе Отдела атрибуту type точно присвоено "Сотрудник". В чем проблема?
             }
 }

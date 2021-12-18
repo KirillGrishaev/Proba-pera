@@ -7,15 +7,13 @@ public class OtdelCredit extends OtdelConstruct {
     private Sotrudnik vasia;
     private double dohod;
     Scanner scanner = new Scanner(System.in);
-
-    public Sotrudnik getVasia() {
-        return vasia;
-    }
-
     public OtdelCredit(String otedelName, int rabotnik) {//Конструктор для Отдела Кредитов//
         this.otdelName = otdelName;
         this.rabotnik = rabotnik;
         vasia = new Sotrudnik("Сотрудник", "Специалист отдела кредитования");
+    }
+    public Sotrudnik getVasia() {
+        return vasia;
     }
     public Credit vidatCredit() {
         Credit credit = new Credit(5, 10);//создание объекта класса Credit с введенными параметрами//
