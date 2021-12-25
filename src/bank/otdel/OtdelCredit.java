@@ -25,7 +25,7 @@ public class OtdelCredit extends OtdelConstruct {
         Sotrudnik specialis = getSpecialist();
         int dohod = client.getDohod();
         int vozrast = client.getVozrast();
-        if ((dohod>1000)&(vozrast>20)) {
+        if ((dohod>1000) && (vozrast>20)) {
             Credit credit = new Credit(5, 10);//создание объекта класса Credit с введенными параметрами//
             System.out.println(specialis.getFamilia()+" "+specialis.getName()+" "+specialis.getPatronymic()+" выдал кредит.");
             System.out.println("Срок кредита: "+credit.getTime()+" лет");//Вывод на экран параметров Кредита//
