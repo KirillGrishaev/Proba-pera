@@ -15,23 +15,36 @@ public class OtdelCredit extends OtdelConstruct {
         specialist = new Sotrudnik("Сотрудник","Консультант отдела кредитования","Иванов","Иван","Иванович");
     }
 
-    public Client getCreditClient(){
-        client = new Client("Клиент","Сидоров","Митрич","Апполосович", 35,1500);
-        return client;
-    }
-
     public Credit vidatCredit() {
-        Client client = getClient();
+        Client[] base = client.getClientBaseArray();
         Sotrudnik specialis = getSpecialist();
-        int dohod = client.getDohod();
-        int vozrast = client.getVozrast();
-        if ((dohod>1000) && (vozrast>20)) {
-            Credit credit = new Credit(5, 10);//создание объекта класса Credit с введенными параметрами//
-            System.out.println(specialis.getFamilia()+" "+specialis.getName()+" "+specialis.getPatronymic()+" выдал кредит.");
-            System.out.println("Срок кредита: "+credit.getTime()+" лет");//Вывод на экран параметров Кредита//
-            System.out.println("Процентная ставка: "+credit.getProcent()+" %");//Вывод на экран параметров Кредита
-        } else {
-            System.out.println("Сотрудник "+specialis.getFamilia()+" "+specialis.getName()+" "+specialis.getPatronymic()+" отказал в кредите");
+        for (int i=0; i<base.length; i++){
+            Credit credit = new Credit(1, 1);
+            int dohod = client.getDohod();
+            int vozrast = client.getVozrast();
+            if (10000 >= dohod ){
+                System.out.println("Сотрудник "+specialis.getFamilia()+" "+specialis.getName()+" "+specialis.getPatronymic()+" отказал в кредите");
+                            }
+            else{ if ((10000 <=dohod)&&(dohod >= 100000)){
+                credit.setProcent(5);
+            }
+            else {
+                credit.setProcent(10);
+                if (18<=vozrast){
+                    if ((18<=vozrast)&&(vozrast<=30)){
+                        credit.setTime(10);
+                        System.out.println("Срок кредита: "+credit.getTime()+" лет");//Вывод на экран параметров Кредита//
+                        System.out.println("Процентная ставка: "+credit.getProcent()+" %");//Вывод на экран параметров Кредита
+                    }
+                    else{
+                        credit.setTime(5);
+                        System.out.println("Срок кредита: "+credit.getTime()+" лет");//Вывод на экран параметров Кредита//
+                        System.out.println("Процентная ставка: "+credit.getProcent()+" %");//Вывод на экран параметров Кредита
+                    }
+                    }
+                }
+            }
+
         }
         return null;
     }

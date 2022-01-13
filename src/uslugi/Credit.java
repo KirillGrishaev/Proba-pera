@@ -9,7 +9,7 @@ public class Credit {
     public int getProcent() {
         return procent;
     }
-    public void setProcent() {
+    public void setProcent(int procent) {
         this.procent = procent;
     }
     public int getTime() {

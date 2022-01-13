@@ -1,5 +1,7 @@
 package people.base;
 
+import java.util.Random;
+
 public class Chelovek{
     private String type;//определение индивида как Клиента или Сотрудника
     private String familia;
@@ -9,10 +11,10 @@ public class Chelovek{
     private String name;
     private String patronymic;
 
-    public Chelovek(String type, String familia , String name, String patronymic, int vozrast, int dohod){//конструктор для создания people.base.Chelovek типа Client (Клиент назван Гостем)
+    public Chelovek(String type, String familia , String name, String patronymic){//конструктор для создания people.base.Chelovek типа Client (Клиент назван Гостем)
         this.familia = familia;
-        this.vozrast = vozrast;
-        this.dohod = dohod;
+        this.vozrast = generateRandomIntVozrast();
+        this.dohod = generateRandomIntDohod(9000,1000000);
         this.name = name;
         this.patronymic = patronymic;
         this.type = type;
@@ -25,6 +27,15 @@ public class Chelovek{
         this.name = name;
         this.patronymic = patronymic;
     }
+
+    public int generateRandomIntVozrast (){
+        Random rnd = new Random();
+        return rnd.nextInt(65)+1;  }
+
+    public int generateRandomIntDohod (int min, int max){
+        Random rnd = new Random();
+        return rnd.nextInt((max - min) + 1) + min; }
+
     public String getFamilia() {return familia; }
     public void setFamilia(String familia) {this.familia = familia; }
 

@@ -31,13 +31,8 @@ public class Bank {//Для отображения общих параметро
                                           "Три девятое царство, г. Урюпинск, улица Щипачей,д.13",
                                           "Кидаем круглосуточно!");
     OtdelCredit otdelCredit = bankOffice.getOtdelCredit();
-    otdelCredit.getCreditClient();
     otdelCredit.vidatCredit();
     }
-
-
-
-
 
 
 
