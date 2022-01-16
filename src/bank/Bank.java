@@ -30,6 +30,7 @@ public class Bank {//Для отображения общих параметро
     BankOffice bankOffice = new BankOffice(kidok.getName(),
                                           "Три девятое царство, г. Урюпинск, улица Щипачей,д.13",
                                           "Кидаем круглосуточно!");
+
     OtdelCredit otdelCredit = bankOffice.getOtdelCredit();
     otdelCredit.vidatCredit();
     }
